@@ -4,7 +4,7 @@ import { fetchNearestCops } from "../db/dbOperation";
 const router = express.Router();
 
 router.get("/cops", async (req, res) => {
-8
+
 
     /*
         extract the latitude and longitude info from the request query parameters.
@@ -27,3 +27,6 @@ router.get("/cops", async (req, res) => {
     }
     
 });
+
+
+export default router;
