@@ -5,6 +5,8 @@ const router = express.Router();
 
 router.get("/cops", async (req, res) => {
 
+    console.log("Request received at /cops");
+
 
     /*
         extract the latitude and longitude info from the request query parameters.
