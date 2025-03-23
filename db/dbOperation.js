@@ -1,4 +1,4 @@
-import Cops from "./dataModel";
+import Cops from "./dataModel.js";
 
 export const fetchNearestCops =(coordinates, maxDistance) => {
     return Cops.find({

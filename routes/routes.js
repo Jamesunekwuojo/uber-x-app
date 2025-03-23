@@ -1,5 +1,5 @@
-import express from express;
-import { fetchNearestCops } from "../db/dbOperation";
+import express from "express";
+import { fetchNearestCops } from "../db/dbOperation.js";
 
 const router = express.Router();
 
