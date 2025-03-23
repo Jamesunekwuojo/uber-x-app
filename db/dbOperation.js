@@ -19,3 +19,20 @@ export const fetchNearestCops =(coordinates, maxDistance) => {
     });
 }
 
+
+export const fetchCopDetails = (userId) => {
+    return Cops.findOne({
+        userId:userId
+    }, {
+        copId:1,
+        displayName:1,
+        phoneNumber:1,
+        location:1
+    })
+    .exec()
+    .catch(error => {
+        console.log(error);
+    });
+}
+
+

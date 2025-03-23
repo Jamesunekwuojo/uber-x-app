@@ -1,5 +1,5 @@
 import express from "express";
-import { fetchNearestCops } from "../db/dbOperation.js";
+import { fetchNearestCops, fetchCopDetails } from "../db/dbOperation.js";
 
 const router = express.Router();
 
@@ -43,5 +43,16 @@ router.get('/cop.html', (req, res) => {
     });
 });
 
+
+router.get('/cops/info', async (req, res) => {
+    const userId = req.query.userId;
+    try {
+        const copDetails = await fetchCopDetails(userId);
+        res.status(200).json({message: "Cop details fetched successfully", copDetails: copDetails});
+    } catch (error) {
+        console.log("Error fetching cops detail ",error);
+        res.status(500).json({message: "Error fetching cop details"});
+    }
+});
 
 export default router;

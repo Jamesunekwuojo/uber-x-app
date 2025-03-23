@@ -8,6 +8,8 @@
 <body data-userId="{{ userId }}">
     <h1>Hello Civilian {{ userId }}</h1>
 
+    <button onclick="requestForHelp()"> Request for Help</button>
+
     <h4 id="notification">
         <!-- Some info will be displayed here-->
     </h4>
@@ -40,6 +42,23 @@ Write rest of your JS code here -->
     let requestDetails = {};
     let copDetails = {};
     let map, marker;
+
+
+    // civilian's info
+requestDetails = {
+    civilianId: userId,
+    location: {
+        address: "Indiranagar, Bengaluru, Karnataka, India",
+        latitude: 12.9718915,
+        longitude: 77.64115449999997
+    }
+}
+
+// When button is clicked, fire request-for-help and send civilian's userId and location
+function requestForHelp(){
+    socket.emit("request-for-help", requestDetails);
+}
+
 </script>
 
 </body>
