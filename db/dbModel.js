@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import Cops from "./dataModel";
+
 
 const requestSchema = new mongoose.Schema({
     requestTime:{type:Date},

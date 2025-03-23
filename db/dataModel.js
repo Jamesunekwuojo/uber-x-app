@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import { type } from "os";
+
 
 const copsSchema = new mongoose.Schema({
     userId: {type: String, required: true, unique: true, trim: true},

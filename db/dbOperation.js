@@ -1,4 +1,5 @@
 import Cops from "./dataModel.js";
+import Request from "./dbModel.js";
 
 export const fetchNearestCops =(coordinates, maxDistance) => {
     return Cops.find({
@@ -34,5 +35,35 @@ export const fetchCopDetails = (userId) => {
         console.log(error);
     });
 }
+
+export const saveRequest = (requestId, requestTime, location, civilianId, status) => {
+    const request = new Request({
+        "_id": requestId,
+        requestTime: requestTime,
+        location: location,
+        civilianId: civilianId,
+        status: status
+    });
+
+    return request.save()
+    .catch(error => {
+        console.log(error);
+    });
+ 
+}
+
+
+export const updateRequest =(issueId, copId, status) =>{
+    return Request.findOneAndUpdate({
+        "_id": issueId
+    }, {
+        status: status,
+        copId: copId
+    }).catch(error => {
+        console.log(error);
+    });
+}
+
+
 
 
