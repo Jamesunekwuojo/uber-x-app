@@ -26,7 +26,10 @@ app.use(express.static('./public')); // set folder name from where to serve the 
 
 app.set('view engine', 'html');
 
+
+
 app.engine('html', consolidate.handlebars);  // Use handlebars to parse templates when we do res.render
+
 
 
 // Routes

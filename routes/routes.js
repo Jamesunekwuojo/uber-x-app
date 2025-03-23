@@ -31,4 +31,17 @@ router.get("/cops", async (req, res) => {
 });
 
 
+router.get('/civilian.html', (req, res) => {
+    res.render('civilian.html', {
+        userId: req.query.userId
+    });
+});
+
+router.get('/cop.html', (req, res) => {
+    res.render('cop.html', {
+        userId: req.query.userId
+    });
+});
+
+
 export default router;
